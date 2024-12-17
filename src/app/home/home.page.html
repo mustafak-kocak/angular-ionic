@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Kullanıcı Listesi</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cikis()" color="danger">
+        <ion-icon name="log-out-outline"></ion-icon> Çıkış
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Yükleniyor Spinner'ı -->
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+
+  <!-- Kullanıcı Listesi -->
+  <ion-grid *ngIf="!isLoading && users.length > 0">
+    <ion-row>
+      <ion-col size="6" *ngFor="let user of users; let i = index">
+        <div class="user-item">
+          <!-- Avatarı üstte göster -->
+          <ion-avatar class="avatar">
+            <img [src]="user.avatar" alt="{{ user.first_name }}" />
+          </ion-avatar>
+
+          <!-- Kullanıcı bilgileri kutusu -->
+          <ion-card class="user-card">
+            <ion-card-header>
+              <ion-card-title>
+                <p>ID: #{{ user.id }}</p>
+                {{ user.first_name }} {{ user.last_name }}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Eposta:<p>{{ user.email }} </p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Liste Boşsa Mesaj Göster -->
+  <div *ngIf="!isLoading && users.length === 0" class="empty-list">
+    <p>Henüz kullanıcı bulunmamaktadır.</p>
+  </div>
+</ion-content>

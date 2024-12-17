@@ -1,0 +1,56 @@
+ion-content {
+  --padding-top: 60%;
+  --padding-start:10%;
+  --padding-end:10%;
+  --background: url('../../assets/home.jpg') 0 0/100% 100% no-repeat;
+}
+ion-card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Kartın genişliğini %100 yap */
+}
+
+.user-item {
+  text-align: center; /* Avatar ve yazıyı ortalamak için */
+  display: flex;
+  flex-direction: column; /* Avatar üstte, yazı altta olacak şekilde düzenle */
+  align-items: center; /* Ortalamak için */
+  justify-content: center;
+  margin-bottom: 20px; /* Kullanıcılar arasında boşluk bırak */
+}
+
+.avatar {
+  margin-bottom: 50px; /* Avatar ile yazı arasına boşluk bırak */
+}
+
+.avatar img {
+  border-radius: 30%; /* Avatarı yuvarlak hale getir */
+  width: 90px; /* Avatarın boyutunu sabitle */
+  height: 90px; /* Avatarın boyutunu sabitle */
+  object-fit: cover; /* Resmi yuvarlak içine sığdır */
+}
+
+.user-card {
+  padding: 15px; /* Kartın içine boşluk bırak */
+  border-radius: 10px; /* Kart kenarlarını yuvarla */
+  background-color: #f9f9f9; /* Kutu arka plan rengini belirle */
+}
+
+.user-card ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center; /* Başlığı ortala */
+}
+
+.user-card ion-card-content p {
+  font-size: 1em;
+  color: #555;
+  text-align: center; /* Yazıyı ortala */
+}
+
+.empty-list {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #999;
+}

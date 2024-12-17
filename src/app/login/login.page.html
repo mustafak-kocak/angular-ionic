@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>HOŞ GELDİNİZ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Giriş Yap</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Şifre</ion-label>
+        <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="onLogin()">Giriş Yap</ion-button>
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <ion-button style="flex: 1;" [routerLink]="['/register']">Kayıt Ol</ion-button>
+        <ion-button style="flex: 1;" [routerLink]="['/sifre']">Şifremi Unuttum</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
